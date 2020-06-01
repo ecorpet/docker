@@ -8,6 +8,8 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN apt-get update \
     && apt-get install -y --no-install-recommends locales apt-utils git;
 
+RUN docker-php-ext-install \
+            pdo_mysql
 # les locales, toujours utiles
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
