@@ -1,0 +1,48 @@
+# Based on https://blog.dev-web.io/2019/02/10/utiliser-symfony-dans-docker/
+# https://stackoverflow.com/questions/54479941/how-to-init-mysql-database-in-docker-compose
+version: '3'
+services:
+    db:
+        image: mysql:5.7
+        container_name: ${CONTAINER_NAME_PREFIX}_db
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            MYSQL_USER: 'root'
+        volumes:
+            - ${MYSQL_DIR}:/var/lib/mysql
+
+    maildev:
+        image: djfarrelly/maildev
+        container_name: ${CONTAINER_NAME_PREFIX}_mail
+        ports:
+            - "8002:80"
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: ${CONTAINER_NAME_PREFIX}_phpmyadmin
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
+        environment:
+            PMA_HOST: ${CONTAINER_NAME_PREFIX}_db
+
+    php730:
+        build: php73
+        container_name: ${CONTAINER_NAME_PREFIX}_php730
+        ports:
+            - "9073:80"
+        volumes:
+            - ./vhosts:/etc/apache2/sites-enabled
+            - ./../project/:/var/www
+
+    php740:
+        build: php74
+        container_name: ${CONTAINER_NAME_PREFIX}_php740
+        ports:
+            - "9074:80"
+        volumes:
+            - ./vhosts:/etc/apache2/sites-enabled
+            - ./../project/:/var/www

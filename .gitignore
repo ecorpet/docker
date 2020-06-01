@@ -1,0 +1,6 @@
+datas/mysql/*
+datas/mysql/.gitkeep
+datas/cache/*
+datas/cache/.gitkeep
+datas/logs/*
+datas/logs/.gitkeep
