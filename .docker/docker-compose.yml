@@ -10,11 +10,14 @@ services:
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
             MYSQL_USER: 'root'
+            MYSQL_ROOT_PASSWORD: 'sweetpwd'
+            MYSQL_DATABASE: 'ereporting'
+            MYSQL_PASSWORD: 'mypwd'
         volumes:
             - ${MYSQL_DIR}:/var/lib/mysql
 
     maildev:
-        image: djfarrelly/maildev
+        image: maildev/maildev
         container_name: ${CONTAINER_NAME_PREFIX}_mail
         ports:
             - "8002:80"

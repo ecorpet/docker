@@ -1,0 +1,12 @@
+{
+    "name": "emmanuel/email",
+    "require": {
+        "swiftmailer/swiftmailer": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "e.corpet",
+            "email": "e.corpet@mazarinedigital.com"
+        }
+    ]
+}

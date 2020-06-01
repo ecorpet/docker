@@ -9,6 +9,7 @@ Here are the requirements for the project:
 ## Commands
 
 - docker exec -u 1000 -it $(docker ps -aqf "name=ereporting_php730") bash
+- docker exec -u 1000 -it $(docker ps -aqf "name=ereporting_php740") bash
 - docker exec -u 1000 -it $(docker ps -aqf "name=ereporting_db") bash
 
 ## Tools urls 
