@@ -1,8 +1,9 @@
 <?php
 require_once './../vendor/autoload.php';
+require '_config.php';
 
 // Create the Transport
-$transport = (new Swift_SmtpTransport('maildev', 25));
+$transport = (new Swift_SmtpTransport(MAILER_HOST, MAILER_PORT));
 
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
@@ -10,9 +11,14 @@ $mailer = new Swift_Mailer($transport);
 // Create a message
 $message = (new Swift_Message('Wonderful Subject '.time()))
 ->setFrom(['john@doe.com' => 'John Doe'])
-->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+->setTo(['receiver1@domain.org', 'receiver2@domain.org' => 'A name'])
 ->setBody('Here is the message itself')
 ;
 
-// Send the message
-var_dump($mailer->send($message));
+$recipients = $mailer->send($message);
+if($recipients >0) {
+    echo "Sent successully" ;
+} else  {
+    echo "Problem" ;
+}
+

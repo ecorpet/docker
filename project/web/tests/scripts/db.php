@@ -1,10 +1,11 @@
 <?php
-/* Connexion à une base MySQL avec l'invocation de pilote */
-$dsn = 'mysql:dbname=ereporting;host=db';
+require '_config.php';
+
+$dsn = "mysql:dbname=".DATABASE_NAME.";host=".DATABASE_HOST;
 $user = 'root';
 $password = '';
 try {
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn, DATABASE_USER, DATABASE_PASSWORD);
 } catch (PDOException $e) {
     echo 'Connexion échouée : ' . $e->getMessage();
 }
