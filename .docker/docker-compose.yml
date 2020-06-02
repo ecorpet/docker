@@ -30,11 +30,11 @@ services:
         environment:
             PMA_HOST: ${CONTAINER_NAME_PREFIX}_db
 
-    php740:
-        build: php74
-        container_name: ${CONTAINER_NAME_PREFIX}_php740
+    php730:
+        build: php73
+        container_name: ${CONTAINER_NAME_PREFIX}_php730
         ports:
-            - "9074:80"
+            - "9073:80"
         volumes:
             - ./apache2/sites-available:/etc/apache2/sites-available
             - ./apache2/sites-enabled:/etc/apache2/sites-enabled

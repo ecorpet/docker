@@ -1,9 +1,6 @@
 # image à utiliser
 FROM php:7.3-apache
 
-# On envoie le nom du serveur à apache, c'est avec ça que l'on appelera nos pages
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-
 # Quelques library necessaires
 RUN apt-get update \
     && apt-get install -y --no-install-recommends locales apt-utils git;
@@ -24,7 +21,7 @@ RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
 
 # On créé un utilisateur avec le même gid/uid que votre local
 # cela va permettre que les fichiers qui sont créés dans le contenaire auront vos droits
-RUN addgroup --system gponty --gid 1000 && adduser --system gponty --uid 1000 --ingroup gponty
+RUN addgroup --system mzrn --gid 1000 && adduser --system mzrn --uid 1000 --ingroup mzrn
 
 # le repertoire qui contient vos sources (attention : dans le contenaire, donc le repertoire à droite du mapping du docker-compose)
 WORKDIR /var/www/
