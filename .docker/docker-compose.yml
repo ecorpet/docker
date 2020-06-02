@@ -11,7 +11,7 @@ services:
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
             MYSQL_USER: 'root'
         volumes:
-            - ./mysql:/docker-entrypoint-initdb.d
+            - ./mysql-initdb:/docker-entrypoint-initdb.d
             - ${MYSQL_DIR}:/var/lib/mysql
 
     maildev:
