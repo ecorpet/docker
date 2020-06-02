@@ -32,20 +32,12 @@ services:
         environment:
             PMA_HOST: ${CONTAINER_NAME_PREFIX}_db
 
-    php730:
-        build: php73
-        container_name: ${CONTAINER_NAME_PREFIX}_php730
-        ports:
-            - "9073:80"
-        volumes:
-            - ./vhosts:/etc/apache2/sites-enabled
-            - ./../project/:/var/www
-
     php740:
         build: php74
         container_name: ${CONTAINER_NAME_PREFIX}_php740
         ports:
             - "9074:80"
         volumes:
-            - ./vhosts:/etc/apache2/sites-enabled
+            - ./apache2/sites-available:/etc/apache2/sites-available
+            - ./apache2/sites-enabled:/etc/apache2/sites-enabled
             - ./../project/:/var/www
