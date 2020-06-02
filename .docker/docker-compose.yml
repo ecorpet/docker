@@ -10,9 +10,6 @@ services:
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
             MYSQL_USER: 'root'
-            MYSQL_ROOT_PASSWORD: 'sweetpwd'
-            MYSQL_DATABASE: 'ereporting'
-            MYSQL_PASSWORD: 'mypwd'
         volumes:
             - ${MYSQL_DIR}:/var/lib/mysql
 

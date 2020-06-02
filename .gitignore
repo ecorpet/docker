@@ -1,7 +1,7 @@
 .idea
 datas/mysql/*
 !datas/mysql/.gitkeep
-datas/cache/*
-!datas/cache/.gitkeep
-datas/logs/*
-!datas/logs/.gitkeep
+project/logs/*
+!project/logs/.gitkeep
+project/tmp/*
+!project/tmp/.gitkeep
