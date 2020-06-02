@@ -1,6 +1,7 @@
 <?php
-$dir = $_SERVER['DOCUMENT_ROOT']."/../tmp" ;
-$dir = realpath($dir);
+require '_config.php';
+
+$dir = realpath(WRITE_FILE_FOLDER);
 $filePath = $dir.DIRECTORY_SEPARATOR.time().".txt" ;
 $handler = fopen($filePath, "w") or die("Unable to open file!");
 $txt = "John Doe\n";

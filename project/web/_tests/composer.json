@@ -1,5 +1,5 @@
 {
-    "name": "emmanuel/email",
+    "name": "project/tests",
     "require": {
         "swiftmailer/swiftmailer": "^6.2"
     },

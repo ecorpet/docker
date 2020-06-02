@@ -10,8 +10,8 @@ $mailer = new Swift_Mailer($transport);
 
 // Create a message
 $message = (new Swift_Message('Wonderful Subject '.time()))
-->setFrom(['john@doe.com' => 'John Doe'])
-->setTo(['receiver1@domain.org', 'receiver2@domain.org' => 'A name'])
+->setFrom([MAILER_FROM])
+->setTo([MAILER_TO])
 ->setBody('Here is the message itself')
 ;
 
