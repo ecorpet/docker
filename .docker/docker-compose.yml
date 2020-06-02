@@ -39,3 +39,14 @@ services:
             - ./apache2/sites-available:/etc/apache2/sites-available
             - ./apache2/sites-enabled:/etc/apache2/sites-enabled
             - ./../project/:/var/www
+
+    # https://maxhopei.github.io/2019/06/26/Integrating-Blackfire-io-with-Docker-Compose/
+    blackfire:
+        image: blackfire/blackfire
+        container_name: ${CONTAINER_NAME_PREFIX}_blackfire
+        environment:
+            BLACKFIRE_LOG_LEVEL: 4
+            BLACKFIRE_SERVER_ID: ${BLACKFIRE_SERVER_ID}
+            BLACKFIRE_SERVER_TOKEN: ${BLACKFIRE_SERVER_TOKEN}
+            BLACKFIRE_CLIENT_ID: ${BLACKFIRE_CLIENT_ID}
+            BLACKFIRE_CLIENT_TOKEN: ${BLACKFIRE_CLIENT_TOKEN}
