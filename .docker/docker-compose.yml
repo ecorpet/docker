@@ -50,3 +50,6 @@ services:
             BLACKFIRE_SERVER_TOKEN: ${BLACKFIRE_SERVER_TOKEN}
             BLACKFIRE_CLIENT_ID: ${BLACKFIRE_CLIENT_ID}
             BLACKFIRE_CLIENT_TOKEN: ${BLACKFIRE_CLIENT_TOKEN}
+            BLACKFIRE_LOG_FILE: /tmp/blackfire.log
+        volumes:
+            - ./../project/logs:/tmp
