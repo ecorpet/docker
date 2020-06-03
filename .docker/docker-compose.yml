@@ -55,3 +55,9 @@ services:
             BLACKFIRE_LOG_FILE: /tmp/blackfire.log
         volumes:
             - ./../project/logs:/tmp
+
+    nodejs:
+        build: nodejs
+        container_name: ${CONTAINER_NAME_PREFIX}_nodejs
+        ports:
+            - "49160:8080"
