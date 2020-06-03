@@ -11,6 +11,7 @@ Here are the requirements for the project:
 - docker exec -u 1000 -it $(docker ps -aqf "name=ereporting_db") bash
 
 ## Tools urls 
+- [Node serveur](http://localhost:49160)
 - [Ereporting PHP73](http://ereporting:9073)
 - [Phpmyadmin](http://localhost:8080)
 - [Maildev Panel](http://localhost:8002)
