@@ -4,7 +4,7 @@
 
 Here are the requirements for the project:
 
-- [Docker](http://www.php.net)
+- [Docker](https://www.docker.com/)
 
 ## Commands
 - docker exec -u 1000 -it $(docker ps -aqf "name=ereporting_php730") bash

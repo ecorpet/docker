@@ -12,7 +12,9 @@ services:
             MYSQL_USER: 'root'
         volumes:
             - ./mysql-initdb:/docker-entrypoint-initdb.d
+            - ./mysql/my.cnf:/etc/mysql/conf.d/custom.cnf
             - ${MYSQL_DIR}:/var/lib/mysql
+            - ./../project/logs:/var/log/mysql
 
     maildev:
         image: maildev/maildev
