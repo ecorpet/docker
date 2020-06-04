@@ -15,9 +15,12 @@ This Proof Of Concept will offer you:
 Here are the requirements:
 - [Docker](https://www.docker.com/) installed.
 
+Here are the optionnal requirements:
+- [Blackfire Chrome extension](https://chrome.google.com/webstore/detail/blackfire-profiler/miefikpgahefdbcgoiicnmpbeeomffld)
+
 ### Start project 
 - In order to run test : `cd project/web/_tests && composer install` 
-- To start composer: `cd .docker/ && docker-compose up`
+- To start docker: `cd .docker/ && docker-compose up`
 
 ## Project Urls 
 - Web serveur Node: [http://localhost:49160](http://localhost:49160)
@@ -25,9 +28,6 @@ Here are the requirements:
 - Test features : DB, Send Mail, File writing, Phpinfo: [Click here](http://project-test.local:9073/_tests/scripts/)
 - Phpmyadmin: [http://localhost:8080](http://localhost:8080) : login: "root" , password : leave empty
 - Maildev Panel: [http://localhost:8002](http://localhost:8002)
-
-## Tools  
-- Download [Blackfire Chrome extension](https://chrome.google.com/webstore/detail/blackfire-profiler/miefikpgahefdbcgoiicnmpbeeomffld)
 
 ## Commands
 - To work on the application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
