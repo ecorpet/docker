@@ -31,7 +31,7 @@ services:
         volumes:
             - ./mysql-initdb:/docker-entrypoint-initdb.d
             - ./mysql57/my.cnf:/etc/mysql/conf.d/custom.cnf
-            - ${MYSQL_DIR}:/var/lib/mysql
+            - ${MYSQL_DATA_DIR}:/var/lib/mysql
             - ${MYSQL_LOG_DIR}:/var/log/mysql
 
     # https://maxhopei.github.io/2019/06/26/Integrating-Blackfire-io-with-Docker-Compose/
@@ -63,3 +63,18 @@ services:
             - mysql57
         environment:
             PMA_HOST: ${CONTAINER_NAME_PREFIX}_mysql57
+
+    rabbitmq3:
+        image: rabbitmq:3-management-alpine
+        container_name: ${CONTAINER_NAME_PREFIX}_rabbitmq3
+        volumes:
+            - ./rabbitmq3/etc/:/etc/rabbitmq/
+            - ${RABBITMQ_DATA_DIR}:/var/lib/rabbitmq/
+            - ${RABBITMQ_LOG_DIR}:/var/log/rabbitmq/
+        environment:
+            RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+        ports:
+            - 5672:5672
+            - 15672:15672

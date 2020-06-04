@@ -5,10 +5,11 @@ The "state of mind" of this poc is to be "version scalable" ( PHP, Node, etc.) a
 
 This Proof Of Concept will offer you:
 - LAMP server
-- Node server ( Pending: still folder location to improve ... )
+- PHP Blackfire tools
 - Phpmyadmin
 - Smtp mail server with inbox interface
-- Blackfire tools ( Php code analysis )
+- RabbitMQ server ( Pending: still test to validate ... )
+- Node server ( Pending: still folder location to improve ... )
 
 ### Requirements
 
@@ -31,6 +32,7 @@ Here are the optionnal requirements:
 - Phpmyadmin: [http://localhost:8080](http://localhost:8080) : login: "root" , password : leave empty
 - Maildev Panel: [http://localhost:8002](http://localhost:8002)
 
-## Commands
-- To make command lines in the LAMP application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
-- To work in command line mode onto the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash` and launch `mysql -u root`
+## Run in command line
+- LAMP application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
+- Mysql:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash` and launch `mysql -u root`
+- Rabbitmq:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_rabbitmq3") bash`
