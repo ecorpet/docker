@@ -14,7 +14,7 @@ services:
             - ./mysql-initdb:/docker-entrypoint-initdb.d
             - ./mysql/my.cnf:/etc/mysql/conf.d/custom.cnf
             - ${MYSQL_DIR}:/var/lib/mysql
-            - ./../project/logs:/var/log/mysql
+            - ${MYSQL_LOG_DIR}:/var/log/mysql
 
     maildev:
         image: maildev/maildev
@@ -40,7 +40,9 @@ services:
         volumes:
             - ./apache2/sites-available:/etc/apache2/sites-available
             - ./apache2/sites-enabled:/etc/apache2/sites-enabled
-            - ./../project/:/var/www
+            - ${PROJECT_DIR}:/var/www
+#        command: bash -c "cd /var/www/web/_tests && composer install"
+
 
     # https://maxhopei.github.io/2019/06/26/Integrating-Blackfire-io-with-Docker-Compose/
     blackfire:
@@ -54,7 +56,7 @@ services:
             BLACKFIRE_CLIENT_TOKEN: ${BLACKFIRE_CLIENT_TOKEN}
             BLACKFIRE_LOG_FILE: /tmp/blackfire.log
         volumes:
-            - ./../project/logs:/tmp
+            - ${BLACKFIRE_LOGS_DIR}:/tmp
 
 # https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/
     nodejs:
