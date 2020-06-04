@@ -21,12 +21,12 @@ Here are the requirements:
 - Web serveur Node: [http://localhost:49160](http://localhost:49160)
 - Web serveur Apache: [http://project-test.local:9073](http://project-test.local:9073)
 - Test features : DB, Send Mail, File writing, Phpinfo: [Click here](http://project-test.local:9073/_tests/scripts/)
-- Phpmyadmin: [http://localhost:8080](http://localhost:8080) : login: "root" , password : laisser vide
+- Phpmyadmin: [http://localhost:8080](http://localhost:8080) : login: "root" , password : leave empty
 - Maildev Panel: [http://localhost:8002](http://localhost:8002)
 
 ## Tools  
 - Download [Blackfire Chrome extension](https://chrome.google.com/webstore/detail/blackfire-profiler/miefikpgahefdbcgoiicnmpbeeomffld)
 
 ## Commands
-- Pour travailler sur l'application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
-- Pour travailler sur la base de données:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_db") bash`
+- To work on the application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
+- To work on the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_db") bash`
