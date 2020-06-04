@@ -31,4 +31,4 @@ Here are the requirements:
 
 ## Commands
 - To work on the application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
-- To work on the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_db") bash`
+- To work on the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash`
