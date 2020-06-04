@@ -2,35 +2,6 @@
 # https://stackoverflow.com/questions/54479941/how-to-init-mysql-database-in-docker-compose
 version: '3'
 services:
-    db:
-        image: mysql:5.7
-        container_name: ${CONTAINER_NAME_PREFIX}_db
-        ports:
-            - "3307:3306"
-        environment:
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-            MYSQL_USER: 'root'
-        volumes:
-            - ./mysql-initdb:/docker-entrypoint-initdb.d
-            - ./mysql/my.cnf:/etc/mysql/conf.d/custom.cnf
-            - ${MYSQL_DIR}:/var/lib/mysql
-            - ${MYSQL_LOG_DIR}:/var/log/mysql
-
-    maildev:
-        image: maildev/maildev
-        container_name: ${CONTAINER_NAME_PREFIX}_mail
-        ports:
-            - "8002:80"
-
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        container_name: ${CONTAINER_NAME_PREFIX}_phpmyadmin
-        ports:
-            - "8080:80"
-        depends_on:
-            - db
-        environment:
-            PMA_HOST: ${CONTAINER_NAME_PREFIX}_db
 
     php730:
         build: php73
@@ -43,6 +14,26 @@ services:
             - ${PROJECT_DIR}:/var/www
 #        command: bash -c "cd /var/www/web/_tests && composer install"
 
+    # https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/
+    nodejs10:
+        build: nodejs10
+        container_name: ${CONTAINER_NAME_PREFIX}_nodejs10
+        ports:
+            - "49160:8080"
+
+    mysql57:
+        image: mysql:5.7
+        container_name: ${CONTAINER_NAME_PREFIX}_mysql57
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            MYSQL_USER: 'root'
+        volumes:
+            - ./mysql-initdb:/docker-entrypoint-initdb.d
+            - ./mysql57/my.cnf:/etc/mysql/conf.d/custom.cnf
+            - ${MYSQL_DIR}:/var/lib/mysql
+            - ${MYSQL_LOG_DIR}:/var/log/mysql
 
     # https://maxhopei.github.io/2019/06/26/Integrating-Blackfire-io-with-Docker-Compose/
     blackfire:
@@ -58,9 +49,18 @@ services:
         volumes:
             - ${BLACKFIRE_LOGS_DIR}:/tmp
 
-# https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/
-    nodejs:
-        build: nodejs
-        container_name: ${CONTAINER_NAME_PREFIX}_nodejs
+    maildev:
+        image: maildev/maildev
+        container_name: ${CONTAINER_NAME_PREFIX}_maildev
         ports:
-            - "49160:8080"
+            - "8002:80"
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: ${CONTAINER_NAME_PREFIX}_phpmyadmin
+        ports:
+            - "8080:80"
+        depends_on:
+            - mysql57
+        environment:
+            PMA_HOST: ${CONTAINER_NAME_PREFIX}_mysql57

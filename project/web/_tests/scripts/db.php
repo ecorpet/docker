@@ -9,8 +9,8 @@ try {
 } catch (PDOException $e) {
     echo 'Connexion échouée : ' . $e->getMessage();
 }
-$sql = 'SELECT id, value FROM test';
+$sql = 'SELECT id, value FROM _test';
 $values = $dbh->query($sql);
 foreach ($values as $row) {
-    print $row["id"] . "-" . $row["value"] . PHP_EOL ;
+    print $row["id"] . " - " . $row["value"] ."<br/>" ;
 }
