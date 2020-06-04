@@ -1,7 +1,9 @@
-# Projet test
+#  Docker POC
 
 ### Introduction
-This POC will allow you to have
+The "state of mind" of this poc is to be "version scalable" ( PHP, Node, etc.) and to expose configurations for fine tuning.
+
+This Proof Of Concept will allow you to have :
 - LAMP server
 - Node server ( Pending: still folder location to improve ... )
 - Phpmyadmin
