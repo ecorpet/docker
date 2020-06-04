@@ -12,7 +12,6 @@ services:
             - ./apache2/sites-available:/etc/apache2/sites-available
             - ./apache2/sites-enabled:/etc/apache2/sites-enabled
             - ${PROJECT_DIR}:/var/www
-#        command: bash -c "cd /var/www/web/_tests && composer install"
 
     # https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/
     nodejs10:
