@@ -1,2 +1,1 @@
-<?php
-echo time() ;
+Now we are "<?php echo date('l jS \of F Y h:i:s A') ?>"

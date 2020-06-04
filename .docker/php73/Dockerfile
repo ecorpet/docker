@@ -1,12 +1,28 @@
 # image à utiliser
 FROM php:7.3-apache
 
+RUN a2enmod rewrite
+
 # Quelques library necessaires
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends locales apt-utils git;
+    && apt-get install -y --no-install-recommends \
+        locales \
+        apt-utils \
+        git \
+        nano  \
+        vim  \
+        iproute2 \
+        wget \
+        ssh \
+        libmcrypt-dev \
+        libicu-dev \
+        libzip-dev \
+    && apt-get clean
 
 RUN docker-php-ext-install \
-            pdo_mysql
+        pdo_mysql \
+        zip \
+        curl
 
 RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/$version \
