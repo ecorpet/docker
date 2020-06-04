@@ -3,7 +3,7 @@
 ### Introduction
 This POC will allow you to have
 - LAMP server
-- Node server 
+- Node server ( Pending: still folder location to improve ... )
 - Phpmyadmin
 - Smtp mail server with inbox interface to test your email fonctionnalities
 - Blackfire tools ( Php code analysis )
