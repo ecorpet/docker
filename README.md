@@ -3,11 +3,11 @@
 ### Introduction
 The "state of mind" of this poc is to be "version scalable" ( PHP, Node, etc.) and to expose configurations for fine tuning.
 
-This Proof Of Concept will allow you to have :
+This Proof Of Concept will offer you:
 - LAMP server
 - Node server ( Pending: still folder location to improve ... )
 - Phpmyadmin
-- Smtp mail server with inbox interface to test your email fonctionnalities
+- Smtp mail server with inbox interface
 - Blackfire tools ( Php code analysis )
 
 ### Requirements
