@@ -16,8 +16,8 @@ Here are the requirements:
 - [Docker](https://www.docker.com/) installed.
 
 ### Start project 
-- `cd ./docker/`
-- `docker-compose up`
+- In order to run test : `cd project/web/_tests && composer install` 
+- To start composer: `cd .docker/ && docker-compose up`
 
 ## Project Urls 
 - Web serveur Node: [http://localhost:49160](http://localhost:49160)
