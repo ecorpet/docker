@@ -19,9 +19,10 @@ Here are the optionnal requirements:
 - [Blackfire Chrome extension](https://chrome.google.com/webstore/detail/blackfire-profiler/miefikpgahefdbcgoiicnmpbeeomffld)
 
 ### Start project 
-- Create your own Docker `.docker/.env` file. ( `cp .docker/.env.sample .docker/.env` ) and configure Blackfire ids ( if needed )
+- Create the Docker `.env` file. ( `cp .docker/.env.sample .docker/.env` ).
+- If Blackfire is needed: Configure Blackfire ids
 - In order to run test : `cd project/web/_tests && composer install` 
-- To start docker: `cd .docker/ && docker-compose up`
+- Finally to start docker: `cd .docker/ && docker-compose up`
 
 ## Project Urls 
 - Web serveur Node: [http://localhost:49160](http://localhost:49160)
