@@ -32,5 +32,5 @@ Here are the optionnal requirements:
 - Maildev Panel: [http://localhost:8002](http://localhost:8002)
 
 ## Commands
-- To work on the application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
-- To work on the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash`
+- To make command lines in the LAMP application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
+- To work in command line mode onto the database:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash` and launch `mysql -u root`
