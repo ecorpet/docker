@@ -59,5 +59,6 @@ ENV XDEBUG_CONFIG="xdebug.idekey=''"
 # cela va permettre que les fichiers qui sont créés dans le contenaire auront vos droits
 RUN addgroup --system mzrn --gid 1000 && adduser --system mzrn --uid 1000 --ingroup mzrn
 
+RUN a2enmod headers
 # le repertoire qui contient vos sources (attention : dans le contenaire, donc le repertoire à droite du mapping du docker-compose)
 WORKDIR /var/www/
