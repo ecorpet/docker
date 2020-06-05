@@ -5,7 +5,7 @@ require '_config.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-$connection = new AMQPStreamConnection(RABBITMQ_HOST, 5672, 'guest', 'guest');
+$connection = new AMQPStreamConnection(RABBITMQ_HOST, 5672, RABBITMQ_DEFAULT_USER, RABBITMQ_DEFAULT_PASS);
 $channel = $connection->channel();
 
 $channel->queue_declare('hello', false, false, false, false);

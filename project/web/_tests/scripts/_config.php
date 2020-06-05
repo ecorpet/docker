@@ -17,3 +17,5 @@ define('WRITE_FILE_FOLDER',$path);
 
 # Used in rabbitmq*.php
 define('RABBITMQ_HOST','rabbitmq3');
+define('RABBITMQ_DEFAULT_USER','guest');
+define('RABBITMQ_DEFAULT_PASS','guest');
