@@ -9,7 +9,6 @@ services:
         ports:
             - "9073:80"
         volumes:
-            - ./apache2/sites-available:/etc/apache2/sites-available
             - ./apache2/sites-enabled:/etc/apache2/sites-enabled
             - ${PROJECT_DIR}:/var/www
 
@@ -40,7 +39,7 @@ services:
         ports:
             - "9000:8080"
         volumes:
-            - ./swagger/swagger.json:/docs/swagger.json
+            - ./../project/web/_tests/scripts/swagger.json:/docs/swagger.json
         environment:
             - SWAGGER_JSON="/docs/swagger.json"
 

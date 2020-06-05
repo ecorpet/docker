@@ -4,7 +4,7 @@
 The "state of mind" of this poc is to be "version scalable" ( PHP, Node, etc.) and to expose configurations for fine tuning.
 
 This Proof Of Concept will offer you:
-- LAMP server
+- LAMP server ( xdebig && composer included )
 - PHP Blackfire tools
 - Phpmyadmin
 - Swagger
