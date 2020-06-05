@@ -34,22 +34,15 @@ services:
             - ${MYSQL_DATA_DIR}:/var/lib/mysql
             - ${MYSQL_LOG_DIR}:/var/log/mysql
 
-# https://medium.com/@lukaszlenart/how-to-configure-rabbitmq-properly-fa39b2d4cda2
-    rabbitmq3:
-        build: rabbitmq3
-        container_name: ${CONTAINER_NAME_PREFIX}_rabbitmq3
-        volumes:
-            - ./rabbitmq3/etc/:/etc/rabbitmq/
-            - ${RABBITMQ_DATA_DIR}:/var/lib/rabbitmq/
-            - ${RABBITMQ_LOG_DIR}:/var/log/rabbitmq/
-        environment:
-            RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
-            RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    swagger:
+        image: swaggerapi/swagger-ui
+        container_name: ${CONTAINER_NAME_PREFIX}_swagger
         ports:
-            - "5672:5672"
-            - "15672:15672"
-
+            - "9000:8080"
+        volumes:
+            - ./swagger/swagger.json:/docs/swagger.json
+        environment:
+            - SWAGGER_JSON="/docs/swagger.json"
 
     # https://maxhopei.github.io/2019/06/26/Integrating-Blackfire-io-with-Docker-Compose/
     blackfire:

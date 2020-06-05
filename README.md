@@ -7,8 +7,8 @@ This Proof Of Concept will offer you:
 - LAMP server
 - PHP Blackfire tools
 - Phpmyadmin
+- Swagger
 - Smtp mail server with inbox interface
-- RabbitMQ server ( Pending: still test to validate ... )
 - Node server ( Pending: still folder location to improve ... )
 
 ### Requirements
@@ -30,6 +30,7 @@ Here are the optionnal requirements:
 - Web serveur Apache: [http://project-test.local:9073](http://project-test.local:9073)
 - Test features : DB, Send Mail, File writing, Phpinfo: [Click here](http://project-test.local:9073/_tests/scripts/)
 - Phpmyadmin: [http://localhost:8080](http://localhost:8080) : login: "root" , password : leave empty
+- Swagger: [http://localhost:9000](http://localhost:9000)
 - Maildev Panel: [http://localhost:8002](http://localhost:8002)
 
 ## Run in command line
