@@ -36,4 +36,3 @@ Here are the optionnal requirements:
 ## Run in command line
 - LAMP application: `docker exec -u 1000 -it $(docker ps -aqf "name=project-test_php730") bash`
 - Mysql:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_mysql57") bash` and launch `mysql -u root`
-- Rabbitmq:`docker exec -u 1000 -it $(docker ps -aqf "name=project-test_rabbitmq3") bash`
