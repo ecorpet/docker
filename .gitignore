@@ -1,5 +1,6 @@
 .idea
 .docker/.env
+.DS_Store
 datas/mysql/*
 !datas/mysql/.gitkeep
 project/logs/*
