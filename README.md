@@ -22,7 +22,7 @@ Here are the optionnal requirements:
 ### Start project 
 - Create the Docker `.env` file. ( `cp .docker/.env.sample .docker/.env` ).
 - If Blackfire is needed: Configure Blackfire ids
-- In order to run test : `cd project/web/_tests && composer install` 
+- In order to run tests : `cd project/web/_tests && composer install` 
 - Finally to start docker: `cd .docker/ && docker-compose up`
 
 ## Project Urls 
