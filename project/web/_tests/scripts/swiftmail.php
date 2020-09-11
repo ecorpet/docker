@@ -21,4 +21,7 @@ if($recipients >0) {
 } else  {
     echo "Problem" ;
 }
+?>
+<br/>
+<a href="http://localhost:8002" target="_blank" >Check emails</a>
 
