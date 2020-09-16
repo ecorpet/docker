@@ -67,5 +67,8 @@ ENV XDEBUG_CONFIG="xdebug.idekey=''"
 RUN addgroup --system mzrn --gid 1000 && adduser --system mzrn --uid 1000 --ingroup mzrn
 
 RUN a2enmod headers
+RUN a2enmod rewrite
+RUN a2enmod expires
+
 # le repertoire qui contient vos sources (attention : dans le contenaire, donc le repertoire à droite du mapping du docker-compose)
 WORKDIR /var/www/
